@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JusticeAI – Legal Help Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+  <div class="nav-logo">
+
+    ⚖️ JusticeAI
+
+  </div>
+
+
+  <ul class="nav-links">
+
+
+  <!-- HOME -->
+
+  <li>
+
+    <a href="index.html">
+
+      🏠 Home
+
+    </a>
+
+  </li>
+
+
+  <!-- DASHBOARD -->
+
+  <li class="dashboard-link">
+
+    <a href="dashboard.html">
+
+      📊 Dashboard
+
+    </a>
+
+  </li>
+
+
+  <!-- PROJECT DOCS -->
+
+  <li class="dropdown">
+
+    <a href="#" id="projectToggle">
+
+      📁 Project Docs ⬇
+
+    </a>
+
+    <ul class="dropdown-menu">
+
+      <li>
+
+        <a href="#"
+           onclick="openDoc('docs/JusticeAI_Concept Report .docx')">
+
+          📄 Concept Note
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="#"
+           onclick="openDoc('docs/JusticeAI lean canvas.pdf')">
+
+          📊 Lean Canvas
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="#"
+           onclick="openDoc('docs/JusticeAI PPT.pptx')">
+
+          📽️ Presentation PPT
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="future-scope.html">
+
+          🚀 Future Scope
+
+        </a>
+
+      </li>
+
+    </ul>
+
+  </li>
+
+
+  <!-- AI FEATURES -->
+
+  <li class="dropdown">
+
+    <a href="#" id="featureToggle">
+
+      🤖 AI Features ⬇
+
+    </a>
+
+    <ul class="dropdown-menu">
+
+
+      <li>
+
+        <a href="legal-chatbot.html">
+
+          🤖 AI Legal Assistant
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="consult-lawyer.html">
+
+          👨‍⚖️ Consult Lawyer
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="ai-summarizer.html">
+
+          📑 AI Case Summarizer
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="document-generator.html">
+
+          📝 Legal Document Generator
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="fir-generator.html">
+
+          📄 FIR Generator
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="cybercrime-help.html">
+
+          🛡️ Cybercrime Help
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="fir-guide.html">
+
+          🚔 FIR Filing Guide
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="certificate-generator.html">
+
+          🏆 Certificate Generator
+
+        </a>
+
+      </li>
+
+
+      <li>
+
+        <a href="settings.html">
+
+          ⚙️ AI Settings
+
+        </a>
+
+      </li>
+
+    </ul>
+
+  </li>
+
+
+  <!-- LEGAL SERVICES -->
+
+  <li class="dropdown">
+
+    <a href="#" id="legalToggle">
+
+      ⚖️ Legal Services ⬇
+
+    </a>
+
+    <ul class="dropdown-menu">
+
+      <li>
+
+        <a href="#"
+           onclick="openLegal()">
+
+          📘 Know Your Rights
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="legal-chatbot.html">
+
+          💬 Legal Chatbot
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="consult-lawyer.html">
+
+          👨‍⚖️ Legal Consultation
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="cybercrime-help.html">
+
+          🛡️ Cybercrime Support
+
+        </a>
+
+      </li>
+
+    </ul>
+
+  </li>
+
+
+  <!-- COURSES -->
+
+  <li class="dropdown">
+
+    <a href="#" id="courseToggle">
+
+      🎓 Courses ⬇
+
+    </a>
+
+    <ul class="dropdown-menu">
+
+      <li>
+
+        <a href="course.html">
+
+          📚 Legal Courses
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="live-courses.html">
+
+          🎥 Live Courses
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="quiz.html">
+
+          🧠 Quiz System
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="certification.html">
+
+          🏅 Certifications
+
+        </a>
+
+      </li>
+
+    </ul>
+
+  </li>
+
+
+  <!-- PLATFORM -->
+
+  <li class="dropdown">
+
+    <a href="#" id="platformToggle">
+
+      🌐 Platform ⬇
+
+    </a>
+
+    <ul class="dropdown-menu">
+
+      <li>
+
+        <a href="about.html">
+
+          📖 About JusticeAI
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="dashboard.html">
+
+          📊 Analytics Dashboard
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="contact.html">
+
+          📩 Contact
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="privacy-policy.html">
+
+          🔒 Privacy Policy
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a href="terms-and-conditions.html">
+
+          📜 Terms & Conditions
+
+        </a>
+
+      </li>
+
+    </ul>
+
+  </li>
+
+
+  <!-- TEAM -->
+
+  <li>
+
+    <a href="#"
+       onclick="openTeam()">
+
+      👨‍💻 Team
+
+    </a>
+
+  </li>
+
+</ul>
+
+</nav>
+
+ <header class="glass-header">
+  <div class="hero-shell">
+
+    <div class="hero-left">
+      <span class="hero-pill">⚖️ Justice for Everyone</span>
+      <h1>JusticeAI</h1>
+      <p class="hero-sub">
+        Your AI-powered legal assistant to understand your rights, file complaints, and stay legally protected.
+      </p>
+
+      <div class="hero-metrics">
+        <div><strong>24/7</strong><span>AI Support</span></div>
+        <div><strong>8+</strong><span>Legal Domains</span></div>
+        <div><strong>100%</strong><span>Free Access</span></div>
+      </div>
+
+      <div class="hero-cta-row">
+        <button class="hero-primary" onclick="openLegal()">Explore Laws</button>
+        <button class="hero-secondary">Ask AI</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card card-1">
+        ⚖️ Know Your Rights
+        <p>Simple explanations of constitutional and traffic laws.</p>
+      </div>
+
+      <div class="hero-card card-2">
+        🧠 AI Legal Assistant
+        <p>Chatbot support for real-life legal problems.</p>
+      </div>
+
+      <div class="hero-card card-3">
+        📄 Official Resources
+        <p>RTI, FIR and complaint filing guidance.</p>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+
+
+
+  <main class="main-section">
+    <!--  Quick Action Options -->
+    <section class="quick-actions">
+      <h2>⚡ What do you want to do?</h2>
+      <div class="action-buttons">
+        <button>Report a Problem</button>
+        <button>Understand a Law</button>
+        <button>File a Complaint</button>
+        <button>Know Your Rights</button>
+        <button>Browse Legal Topics</button>
+      </div>
+    </section>
+
+    <!--  FAQ Section -->
+    <section class="faq-section">
+      <h2>❓ Frequently Asked Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>What is JusticeAI?</summary>
+          <p>JusticeAI is an AI-powered chatbot designed to help citizens understand their legal rights and navigate
+            common legal issues.</p>
+        </details>
+        <details>
+          <summary>Is it free to use?</summary>
+          <p>Yes! JusticeAI is a free public service aligned with UN SDG 16 – Peace, Justice, and Strong Institutions.
+          </p>
+        </details>
+        <details>
+          <summary>Can it help me file a complaint?</summary>
+          <p>Yes. It can guide you step-by-step or direct you to the right authority/platform.</p>
+        </details>
+        <details>
+          <summary>Does this replace a lawyer?</summary>
+          <p>No. JusticeAI is for educational and guidance purposes. For legal representation, consult a certified
+            lawyer.</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="intro-card glass-card">
+      <h2>👋 Welcome to JusticeAI</h2>
+      <p>
+        Need help understanding your legal rights or filing a complaint? Our AI agent is here to assist you 24/7.
+        Just click the chat icon in the corner to begin.
+      </p>
+      <p class="note">Built with care under SDG 16 – Peace, Justice, and Strong Institutions</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 JusticeAI | Empowering Citizens Through AI
+  </footer>
+
+  <!--  Document Modal -->
+  <div id="docModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="docFrame" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <!--  Team Modal -->
+  <div id="teamModal" class="modal">
+    <div class="modal-content team-modal">
+      <span class="close team-close">&times;</span>
+      <h2 class="team-title">👨‍💻  JusticeAI (CodeSquad)</h2>
+
+      <!-- Team Leader Highlighted -->
+        <div class="team-leader">
+        <div class="member-card leader-card">
+          <img src="images/farhaan.jpg" alt="Farhaan">
+          <h3>Farhaan Husain</h3>
+          <p><strong>Team Leader & Model Builder</strong></p>
+        </div>
+      </div>
+
+      <!-- 2x2 Team Grid -->
+      <div class="team-grid">
+        <div class="member-card">
+          <img src="images/faizan.jpg" alt="Faizan">
+          <h3>Faizan Raza</h3>
+          <p>Frontend Developer</p>
+        </div>
+        <!-- <div class="member-card">
+          <img src="images/Rahbar.jpeg" alt="Rahbar">
+          <h3>Rahbar Aalam</h3>
+          <p>Documentation & Research</p>
+        </div>
+        <div class="member-card">
+          <img src="images/Ranjit.png" alt="Abul">
+          <h3>Ranjit</h3>
+          <p>UI/UX Designer</p>
+        </div> -->
+        <!-- <div class="member-card">
+          <img src="images/harsh.jpg" alt="Harsh">
+          <h3>Harsh</h3>
+          <p>Research</p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!--  Legal Help Modal -->
+  <div id="legalModal" class="modal">
+    <div class="modal-content legal-modal">
+      <span class="close legal-close">&times;</span>
+      <h2 class="legal-title">📘 Know Your Legal Rights</h2>
+
+      <!--  Search Bar -->
+      <div class="law-search">
+        <input type="search" id="lawSearchInput" placeholder="Search within laws..." oninput="filterLaws()">
+      </div>
+
+      <!-- Tabs -->
+      <div class="law-tabs">
+        <button class="law-btn active" onclick="showLaw('education')">📚 Education</button>
+        <button class="law-btn" onclick="showLaw('property')">🏡 Property</button>
+        <button class="law-btn" onclick="showLaw('traffic')">🚦 Traffic</button>
+        <button class="law-btn" onclick="showLaw('corruption')">💰 Corruption</button>
+        <button class="law-btn" onclick="showLaw('cyber')">🛡️ Cyber</button>
+        <button class="law-btn" onclick="showLaw('child')">🧒 Child</button>
+        <button class="law-btn" onclick="showLaw('fundamental')">🧑‍⚖️ Rights</button>
+        <button class="law-btn" onclick="showLaw('consumer')">🏢 Consumer</button>
+
+      </div>
+
+      <!--  Scrollable & Filterable Content -->
+      <div class="law-content-wrapper">
+        <!-- Education -->
+        <div class="law-content" id="education">
+          <h3>📚 Education Laws</h3>
+          <ul>
+            <li><strong>Right to Education Act (RTE) 2009:</strong> Free & compulsory education for 6–14 years.</li>
+            <li>Every child has the right to a neighborhood school within 1 km.</li>
+            <li>Private schools must reserve 25% seats for disadvantaged children.</li>
+            <li>Corporal punishment is banned.</li>
+            <li>No detention policy up to Class 8.</li>
+            <li>Mid-day meals are compulsory in government schools.</li>
+            <li>Students can’t be denied admission for lack of documents.</li>
+            <li>Schools must provide complaint redressal mechanisms.</li>
+            <li>All institutions must be recognized and follow quality standards.</li>
+          </ul>
+        </div>
+
+        <!-- Property -->
+        <div class="law-content" id="property" style="display:none;">
+          <h3>🏡 Property Laws</h3>
+          <ul>
+            <li><strong>Equal Inheritance:</strong> All legal heirs, regardless of gender, have equal rights.</li>
+            <li>Encroachment is illegal under IPC Section 441.</li>
+            <li>Adverse possession after 12+ years can establish claim.</li>
+            <li>Benami Transactions are criminally punishable.</li>
+            <li>Double sale of property = Fraudulent under Indian Contract Act.</li>
+            <li>Gift deed must be legally registered.</li>
+            <li>Legal heirs can demand partition legally via court.</li>
+            <li>Registration & stamp duty are mandatory for sale transfers.</li>
+          </ul>
+        </div>
+
+        <!-- Traffic -->
+        <div class="law-content" id="traffic" style="display:none;">
+          <h3>🚦 Traffic Laws</h3>
+          <ul>
+            <li>Driving without license: ₹5000 fine.</li>
+            <li>No helmet or seatbelt: ₹1000 fine.</li>
+            <li>Triple riding: ₹2000 fine.</li>
+            <li>Drunk driving: ₹10000 fine + jail.</li>
+            <li>Speed racing: ₹5000 fine.</li>
+            <li>Driving without insurance: ₹2000 fine.</li>
+            <li>Wrong side: ₹5000 fine.</li>
+            <li>Blocking ambulances: ₹10000 fine.</li>
+            <li>Overloaded vehicle: ₹20000+ fine.</li>
+          </ul>
+        </div>
+
+        <!-- Corruption -->
+        <div class="law-content" id="corruption" style="display:none;">
+          <h3>💰 Anti-Corruption Laws</h3>
+          <ul>
+            <li><strong>Prevention of Corruption Act 1988:</strong> Bribery, fraud, and misuse of power are criminal
+              acts.</li>
+            <li>Offering bribes is punishable too.</li>
+            <li>Govt. officials must declare assets annually.</li>
+            <li>Whistleblowers are protected under special acts.</li>
+            <li>Complaints can be submitted to Lokayukta, ACB, or CVC.</li>
+            <li>Digital complaint portals are available (CVC portal).</li>
+            <li>Fast-track courts for corruption exist.</li>
+            <li>RTI empowers public to request info from govt departments.</li>
+          </ul>
+        </div>
+        <!-- Cyber -->
+        <div class="law-content" id="cyber" style="display:none;">
+          <h3>🛡️ Cyber Laws</h3>
+          <ul>
+            <li><strong>IT Act 2000:</strong> Protects against hacking, identity theft, and cyber fraud.</li>
+            <li>Cyberbullying and online harassment are punishable offenses.</li>
+            <li>Sending obscene messages online: punishable under Section 66A (Struck down but referenced).</li>
+            <li>Phishing and fake websites: covered under Section 66D.</li>
+            <li>Cyberstalking is a criminal offense under Section 354D of IPC.</li>
+            <li>Publishing private content without consent is punishable.</li>
+            <li>Data protection and online financial frauds fall under cyber law jurisdiction.</li>
+          </ul>
+        </div>
+
+        <!-- Child Protection -->
+        <div class="law-content" id="child" style="display:none;">
+          <h3>🧒 Child Protection Laws</h3>
+          <ul>
+            <li><strong>POCSO Act 2012:</strong> Ensures protection from sexual offenses against children.</li>
+            <li>Child Labour (Prohibition) Act bans hazardous work for under 14 years.</li>
+            <li>Every child has a right to health, education, and nutrition.</li>
+            <li>Child marriage is illegal under the Prohibition of Child Marriage Act.</li>
+            <li>Abandoning or abusing children is punishable under Section 75 of JJ Act.</li>
+            <li>Helpline 1098 is a 24x7 service for child emergencies.</li>
+          </ul>
+        </div>
+
+        <!-- Fundamental Rights -->
+        <div class="law-content" id="fundamental" style="display:none;">
+          <h3>🧑‍⚖️ Fundamental Rights</h3>
+          <ul>
+            <li><strong>Article 14:</strong> Equality before law and equal protection of the law.</li>
+            <li><strong>Article 19:</strong> Freedom of speech, expression, and association.</li>
+            <li><strong>Article 21:</strong> Right to life and personal liberty.</li>
+            <li><strong>Article 25:</strong> Freedom of religion and conscience.</li>
+            <li><strong>Article 32:</strong> Right to constitutional remedies (approach Supreme Court).</li>
+            <li>No person shall be deprived of property except by law (Article 300A).</li>
+          </ul>
+        </div>
+
+        <!-- Consumer Rights -->
+        <div class="law-content" id="consumer" style="display:none;">
+          <h3>🏢 Consumer Rights</h3>
+          <ul>
+            <li><strong>Right to Safety:</strong> Protection against hazardous goods/services.</li>
+            <li><strong>Right to Information:</strong> Know details of the product (price, expiry, ingredients).</li>
+            <li><strong>Right to Choose:</strong> Access to a variety of goods and services at competitive prices.</li>
+            <li><strong>Right to Redressal:</strong> Compensation for unfair trade practices or exploitation.</li>
+            <li><strong>Consumer Protection Act 2019:</strong> Strengthened rights and redressal mechanism.</li>
+            <li>You can file complaints online at <a href="https://consumerhelpline.gov.in"
+                target="_blank">consumerhelpline.gov.in</a>.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--  Dialogflow Chatbot -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger chat-title="JusticeAI" agent-id="f9bb7017-a149-4204-b02e-2dc311dd79d7"
+    language-code="en"></df-messenger>
+
+<canvas id="universe"></canvas>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    JusticeAI • Legal News & Alerts
+  </title>
+
+
+  <!-- FONT -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+  /* =========================
+     BASE
+  ========================== */
+
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+  body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+
+  }
+
+
+  /* =========================
+     UNIVERSE
+  ========================== */
+
+  #universe{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+    background:
+    radial-gradient(
+      circle at center,
+      #090b1d,
+      #02030a
+    );
+
+  }
+
+
+  /* =========================
+     NAVBAR
+  ========================== */
+
+  .navbar{
+
+    width:100%;
+
+    padding:20px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:
+    rgba(8,10,22,.75);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.06);
+
+  }
+
+  .nav-logo{
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .nav-links{
+
+    display:flex;
+
+    gap:28px;
+
+  }
+
+  .nav-links a{
+
+    color:#d7dbff;
+
+    text-decoration:none;
+
+  }
+
+
+  /* =========================
+     HERO
+  ========================== */
+
+  .hero{
+
+    text-align:center;
+
+    padding:
+    100px 20px 70px;
+
+  }
+
+  .hero-pill{
+
+    display:inline-block;
+
+    padding:
+    10px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(127,124,255,.16);
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    color:#d7dbff;
+
+    font-size:13px;
+
+  }
+
+  .hero h1{
+
+    font-size:72px;
+
+    margin:
+    24px 0 18px;
+
+    line-height:1;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .hero p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:#cfd3ff;
+
+    font-size:17px;
+
+  }
+
+
+  /* =========================
+     NEWS GRID
+  ========================== */
+
+  .news-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+
+    padding:
+    20px 60px 80px;
+
+  }
+
+
+  /* =========================
+     CARD
+  ========================== */
+
+  .news-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:34px;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(13,16,32,.92),
+      rgba(20,24,58,.92)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+  }
+
+  .news-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 20px 45px rgba(127,124,255,.18);
+
+  }
+
+  .news-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-1px;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+      120deg,
+      rgba(127,124,255,.16),
+      rgba(255,111,216,.08)
+    );
+
+    z-index:-1;
+
+  }
+
+
+  /* =========================
+     BADGE
+  ========================== */
+
+  .news-badge{
+
+    display:inline-block;
+
+    margin-bottom:18px;
+
+    padding:
+    8px 14px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    font-size:13px;
+
+    color:#d7dbff;
+
+  }
+
+
+  /* =========================
+     CONTENT
+  ========================== */
+
+  .news-card h3{
+
+    font-size:24px;
+
+    margin-bottom:16px;
+
+    line-height:1.5;
+
+  }
+
+  .news-card p{
+
+    line-height:1.9;
+
+    color:#d2d7ff;
+
+    margin-bottom:22px;
+
+  }
+
+
+  /* =========================
+     FOOTER
+  ========================== */
+
+  .news-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:#9fa8dc;
+
+    font-size:14px;
+
+  }
+
+  .news-footer span{
+
+    color:#7f7cff;
+
+  }
+
+
+  /* =========================
+     RESPONSIVE
+  ========================== */
+
+  @media(max-width:700px){
+
+    .navbar{
+
+      padding:18px 24px;
+
+    }
+
+    .hero h1{
+
+      font-size:52px;
+
+    }
+
+    .news-grid{
+
+      padding:
+      20px 24px 50px;
+
+    }
+
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- =========================
+       UNIVERSE
+  ========================== -->
+
+  <canvas id="universe"></canvas>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <div class="navbar">
+
+    <div class="nav-logo">
+
+      ⚖️ JusticeAI
+
+    </div>
+
+    <div class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="#">
+        News
+      </a>
+
+      <a href="#">
+        Alerts
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <div class="hero">
+
+    <span class="hero-pill">
+
+      📰 Real-Time Legal Updates
+
+    </span>
+
+    <h1>
+
+      Legal News
+      & Cyber Alerts
+
+    </h1>
+
+    <p>
+
+      Stay updated with cybercrime alerts,
+      legal awareness updates, citizen safety
+      advisories and important law-related news.
+
+    </p>
+
+  </div>
+
+
+  <!-- =========================
+       NEWS
+  ========================== -->
+
+  <div class="news-grid">
+
+
+    <!-- CARD -->
+
+    <div class="news-card">
+
+      <div class="news-badge">
+
+        🚨 Cyber Alert
+
+      </div>
+
+      <h3>
+
+        Rise in OTP Fraud Cases Across India
+
+      </h3>
+
+      <p>
+
+        Authorities warned citizens not
+        to share OTPs and banking details
+        after increased online fraud reports.
+
+      </p>
+
+      <div class="news-footer">
+
+        <div>
+
+          JusticeAI News
+
+        </div>
+
+        <span>
+
+          2 Hours Ago
+
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- CARD -->
+
+    <div class="news-card">
+
+      <div class="news-badge">
+
+        ⚖️ Legal Awareness
+
+      </div>
+
+      <h3>
+
+        New Consumer Protection Guidelines Issued
+
+      </h3>
+
+      <p>
+
+        Updated rules strengthen consumer
+        rights regarding digital purchases
+        and online refund protection.
+
+      </p>
+
+      <div class="news-footer">
+
+        <div>
+
+          Legal Bulletin
+
+        </div>
+
+        <span>
+
+          Today
+
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- CARD -->
+
+    <div class="news-card">
+
+      <div class="news-badge">
+
+        🛡️ Safety Advisory
+
+      </div>
+
+      <h3>
+
+        Fake Job Scam Awareness Campaign Launched
+
+      </h3>
+
+      <p>
+
+        Citizens are advised to verify
+        employment offers before making
+        payments to unknown recruiters.
+
+      </p>
+
+      <div class="news-footer">
+
+        <div>
+
+          Cyber Department
+
+        </div>
+
+        <span>
+
+          5 Hours Ago
+
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- CARD -->
+
+    <div class="news-card">
+
+      <div class="news-badge">
+
+        📘 Educational Update
+
+      </div>
+
+      <h3>
+
+        JusticeAI Launches Cyber Awareness Courses
+
+      </h3>
+
+      <p>
+
+        New beginner-friendly legal
+        awareness modules added for
+        students and citizens.
+
+      </p>
+
+      <div class="news-footer">
+
+        <div>
+
+          Platform Update
+
+        </div>
+
+        <span>
+
+          Yesterday
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       UNIVERSE
+    ========================== */
+
+    const canvas =
+    document.getElementById("universe");
+
+    const ctx =
+    canvas.getContext("2d");
+
+    let stars=[];
+
+    let w,h;
+
+    function resize(){
+
+      w =
+      canvas.width =
+      window.innerWidth;
+
+      h =
+      canvas.height =
+      window.innerHeight;
+
+    }
+
+    resize();
+
+    window.addEventListener(
+      "resize",
+      resize
+    );
+
+
+    for(let i=0;i<450;i++){
+
+      stars.push({
+
+        x:Math.random()*w,
+
+        y:Math.random()*h,
+
+        z:Math.random()*1.2+.2,
+
+        r:Math.random()*1.5+.3
+
+      });
+
+    }
+
+
+    function animate(){
+
+      ctx.clearRect(0,0,w,h);
+
+      stars.forEach(s=>{
+
+        s.y += s.z;
+
+        if(s.y > h){
+
+          s.y = 0;
+
+          s.x = Math.random()*w;
+
+        }
+
+        ctx.beginPath();
+
+        ctx.arc(
+          s.x,
+          s.y,
+          s.r,
+          0,
+          Math.PI*2
+        );
+
+        ctx.fillStyle =
+        "rgba(127,124,255,.9)";
+
+        ctx.shadowBlur = 15;
+
+        ctx.shadowColor =
+        "#7f7cff";
+
+        ctx.fill();
+
+      });
+
+      requestAnimationFrame(
+        animate
+      );
+
+    }
+
+    animate();
+
+  </script>
+
+</body>
+</html>

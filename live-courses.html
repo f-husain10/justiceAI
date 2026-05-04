@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    JusticeAI • Live Courses
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+  /* =========================
+     BASE
+  ========================== */
+
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+  body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+
+  }
+
+
+  /* =========================
+     UNIVERSE
+  ========================== */
+
+  #universe{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:-5;
+
+    background:
+    radial-gradient(
+      circle at center,
+      #090b1d,
+      #02030a
+    );
+
+  }
+
+
+  /* =========================
+     NAVBAR
+  ========================== */
+
+  .navbar{
+
+    width:100%;
+
+    padding:20px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:
+    rgba(8,10,22,.75);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.06);
+
+  }
+
+  .nav-logo{
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .nav-links{
+
+    display:flex;
+
+    gap:24px;
+
+    list-style:none;
+
+  }
+
+  .nav-links a{
+
+    color:#d8dcff;
+
+    text-decoration:none;
+
+  }
+
+
+  /* =========================
+     PAGE
+  ========================== */
+
+  .courses-page{
+
+    min-height:100vh;
+
+    padding:
+    80px 60px;
+
+  }
+
+
+  /* =========================
+     HERO
+  ========================== */
+
+  .hero-pill{
+
+    display:inline-block;
+
+    padding:
+    9px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(127,124,255,.16);
+
+    color:#d2d0ff;
+
+    font-size:13px;
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+  }
+
+  .courses-title{
+
+    font-size:68px;
+
+    line-height:1;
+
+    margin:
+    22px 0;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .courses-sub{
+
+    max-width:620px;
+
+    line-height:1.8;
+
+    color:#d2d7ff;
+
+    font-size:17px;
+
+    margin-bottom:50px;
+
+  }
+
+
+  /* =========================
+     GRID
+  ========================== */
+
+  .course-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+
+  }
+
+
+  /* =========================
+     CARD
+  ========================== */
+
+  .course-card{
+
+    padding:30px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(13,16,32,.92),
+      rgba(20,24,58,.92)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+  }
+
+  .course-card:hover{
+
+    transform:
+    translateY(-6px);
+
+    box-shadow:
+    0 18px 45px rgba(127,124,255,.18);
+
+  }
+
+
+  /* =========================
+     ICON
+  ========================== */
+
+  .course-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:34px;
+
+    margin-bottom:24px;
+
+    background:
+    rgba(127,124,255,.14);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+  }
+
+
+  /* =========================
+     TEXT
+  ========================== */
+
+  .course-card h3{
+
+    margin-bottom:14px;
+
+    font-size:24px;
+
+  }
+
+  .course-card p{
+
+    line-height:1.8;
+
+    color:#d2d7ff;
+
+    margin-bottom:20px;
+
+  }
+
+
+  /* =========================
+     INFO
+  ========================== */
+
+  .course-info{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:22px;
+
+  }
+
+  .course-info span{
+
+    padding:
+    8px 14px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    font-size:13px;
+
+    color:#d8dcff;
+
+  }
+
+
+  /* =========================
+     BUTTON
+  ========================== */
+
+  .enroll-btn{
+
+    width:100%;
+
+    padding:
+    15px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    background:
+    linear-gradient(
+      135deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    box-shadow:
+    0 10px 25px rgba(127,124,255,.24);
+
+  }
+
+
+  /* =========================
+     RESPONSIVE
+  ========================== */
+
+  @media(max-width:700px){
+
+    .navbar{
+
+      padding:18px 24px;
+
+    }
+
+    .courses-page{
+
+      padding:
+      50px 24px;
+
+    }
+
+    .courses-title{
+
+      font-size:52px;
+
+    }
+
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav class="navbar">
+
+    <div class="nav-logo">
+
+      ⚖️ JusticeAI
+
+    </div>
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          Live Courses
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- ================= UNIVERSE ================= -->
+
+  <canvas id="universe"></canvas>
+
+
+  <!-- ================= PAGE ================= -->
+
+  <section class="courses-page">
+
+
+    <span class="hero-pill">
+
+      🎓 Legal Awareness Learning
+
+    </span>
+
+
+    <h1 class="courses-title">
+
+      Live Legal
+      Courses
+
+    </h1>
+
+
+    <p class="courses-sub">
+
+      Learn cyber safety, constitutional
+      rights and legal awareness through
+      live expert-led interactive courses.
+
+    </p>
+
+
+    <!-- GRID -->
+
+    <div class="course-grid">
+
+
+      <!-- CARD -->
+
+      <div class="course-card">
+
+        <div class="course-icon">
+
+          🛡️
+
+        </div>
+
+        <h3>
+
+          Cyber Safety Awareness
+
+        </h3>
+
+        <p>
+
+          Learn protection against
+          cyber fraud, OTP scams
+          and online threats.
+
+        </p>
+
+        <div class="course-info">
+
+          <span>
+            4 Weeks
+          </span>
+
+          <span>
+            Beginner
+          </span>
+
+          <span>
+            420+ Students
+          </span>
+
+        </div>
+
+        <button class="enroll-btn">
+
+          Enroll Now
+
+        </button>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="course-card">
+
+        <div class="course-icon">
+
+          ⚖️
+
+        </div>
+
+        <h3>
+
+          Constitution Basics
+
+        </h3>
+
+        <p>
+
+          Understand fundamental
+          rights, duties and Indian
+          constitutional laws.
+
+        </p>
+
+        <div class="course-info">
+
+          <span>
+            3 Weeks
+          </span>
+
+          <span>
+            Beginner
+          </span>
+
+          <span>
+            500+ Students
+          </span>
+
+        </div>
+
+        <button class="enroll-btn">
+
+          Join Course
+
+        </button>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="course-card">
+
+        <div class="course-icon">
+
+          🔐
+
+        </div>
+
+        <h3>
+
+          Digital Privacy & Rights
+
+        </h3>
+
+        <p>
+
+          Learn safe internet practices,
+          digital rights and data privacy
+          awareness.
+
+        </p>
+
+        <div class="course-info">
+
+          <span>
+            6 Weeks
+          </span>
+
+          <span>
+            Intermediate
+          </span>
+
+          <span>
+            310+ Students
+          </span>
+
+        </div>
+
+        <button class="enroll-btn">
+
+          Start Learning
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SCRIPT ================= -->
+
+  <script>
+
+  const canvas =
+  document.getElementById("universe");
+
+  const ctx =
+  canvas.getContext("2d");
+
+  let stars=[];
+
+  let w,h;
+
+  function resize(){
+
+    w =
+    canvas.width =
+    window.innerWidth;
+
+    h =
+    canvas.height =
+    window.innerHeight;
+
+  }
+
+  resize();
+
+  window.addEventListener(
+    "resize",
+    resize
+  );
+
+
+  for(let i=0;i<500;i++){
+
+    stars.push({
+
+      x:Math.random()*w,
+
+      y:Math.random()*h,
+
+      z:Math.random()*1.2+.2,
+
+      r:Math.random()*1.5+.3
+
+    });
+
+  }
+
+
+  function animate(){
+
+    ctx.clearRect(0,0,w,h);
+
+    stars.forEach(s=>{
+
+      s.y += s.z;
+
+      if(s.y > h){
+
+        s.y = 0;
+
+        s.x = Math.random()*w;
+
+      }
+
+      ctx.beginPath();
+
+      ctx.arc(
+        s.x,
+        s.y,
+        s.r,
+        0,
+        Math.PI*2
+      );
+
+      ctx.fillStyle =
+      "rgba(127,124,255,.9)";
+
+      ctx.shadowBlur = 15;
+
+      ctx.shadowColor =
+      "#7f7cff";
+
+      ctx.fill();
+
+    });
+
+    requestAnimationFrame(
+      animate
+    );
+
+  }
+
+  animate();
+
+  </script>
+
+</body>
+</html>

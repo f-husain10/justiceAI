@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    JusticeAI • Legal Document Generator
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+  /* =========================
+     BASE
+  ========================== */
+
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+  body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+
+  }
+
+
+  /* =========================
+     UNIVERSE
+  ========================== */
+
+  #universe{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:-5;
+
+    background:
+    radial-gradient(
+      circle at center,
+      #090b1d,
+      #02030a
+    );
+
+  }
+
+
+  /* =========================
+     NAVBAR
+  ========================== */
+
+  .navbar{
+
+    width:100%;
+
+    padding:20px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:
+    rgba(8,10,22,.75);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.06);
+
+  }
+
+  .nav-logo{
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .nav-links{
+
+    display:flex;
+
+    gap:24px;
+
+    list-style:none;
+
+  }
+
+  .nav-links a{
+
+    color:#d8dcff;
+
+    text-decoration:none;
+
+  }
+
+
+  /* =========================
+     PAGE
+  ========================== */
+
+  .generator-page{
+
+    min-height:100vh;
+
+    padding:
+    80px 60px;
+
+    display:grid;
+
+    grid-template-columns:
+    .9fr 1.1fr;
+
+    gap:60px;
+
+    align-items:start;
+
+  }
+
+
+  /* =========================
+     LEFT
+  ========================== */
+
+  .hero-pill{
+
+    display:inline-block;
+
+    padding:
+    9px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(127,124,255,.16);
+
+    color:#d2d0ff;
+
+    font-size:13px;
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+  }
+
+  .generator-left h1{
+
+    font-size:68px;
+
+    line-height:1;
+
+    margin:
+    20px 0;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .generator-sub{
+
+    max-width:520px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#cfd3ff;
+
+  }
+
+
+  /* =========================
+     FORM
+  ========================== */
+
+  .generator-form{
+
+    margin-top:34px;
+
+    padding:28px;
+
+    border-radius:26px;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(13,16,32,.92),
+      rgba(20,24,58,.92)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+  }
+
+  .generator-form input,
+  .generator-form textarea,
+  .generator-form select{
+
+    width:100%;
+
+    margin-bottom:16px;
+
+    padding:
+    16px 18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    color:white;
+
+    font-size:15px;
+
+  }
+
+  .generator-form textarea{
+
+    height:140px;
+
+    resize:none;
+
+  }
+
+
+  /* =========================
+     BUTTON
+  ========================== */
+
+  .generate-btn{
+
+    width:100%;
+
+    padding:
+    16px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    background:
+    linear-gradient(
+      135deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    box-shadow:
+    0 10px 25px rgba(127,124,255,.24);
+
+  }
+
+
+  /* =========================
+     RIGHT
+  ========================== */
+
+  .generator-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+  }
+
+
+  /* =========================
+     DOCUMENT CARD
+  ========================== */
+
+  .document-card{
+
+    padding:30px;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(13,16,32,.92),
+      rgba(20,24,58,.92)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
+
+  }
+
+  .document-card h3{
+
+    margin-bottom:18px;
+
+  }
+
+  .document-preview{
+
+    line-height:1.9;
+
+    color:#d3d7ff;
+
+  }
+
+
+  /* =========================
+     RESPONSIVE
+  ========================== */
+
+  @media(max-width:950px){
+
+    .generator-page{
+
+      grid-template-columns:1fr;
+
+    }
+
+  }
+
+
+  @media(max-width:700px){
+
+    .navbar{
+
+      padding:18px 24px;
+
+    }
+
+    .generator-page{
+
+      padding:
+      50px 24px;
+
+    }
+
+    .generator-left h1{
+
+      font-size:52px;
+
+    }
+
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav class="navbar">
+
+    <div class="nav-logo">
+
+      ⚖️ JusticeAI
+
+    </div>
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          Document Generator
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- ================= UNIVERSE ================= -->
+
+  <canvas id="universe"></canvas>
+
+
+  <!-- ================= PAGE ================= -->
+
+  <section class="generator-page">
+
+
+    <!-- LEFT -->
+
+    <div class="generator-left">
+
+      <span class="hero-pill">
+
+        📝 AI Legal Automation
+
+      </span>
+
+
+      <h1>
+
+        Legal Document
+        Generator
+
+      </h1>
+
+
+      <p class="generator-sub">
+
+        Generate FIR drafts, RTIs,
+        affidavits and cybercrime
+        complaints instantly using AI.
+
+      </p>
+
+
+      <!-- FORM -->
+
+      <div class="generator-form">
+
+        <select>
+
+          <option>
+            Select Document Type
+          </option>
+
+          <option>
+            FIR Complaint
+          </option>
+
+          <option>
+            RTI Application
+          </option>
+
+          <option>
+            Consumer Complaint
+          </option>
+
+        </select>
+
+
+        <input
+          type="text"
+          placeholder="Enter Full Name"
+        >
+
+
+        <input
+          type="text"
+          placeholder="Enter Address"
+        >
+
+
+        <textarea
+          placeholder="Describe your issue..."
+        ></textarea>
+
+
+        <button
+          class="generate-btn"
+          onclick="generateDocument()"
+        >
+
+          Generate Document
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT -->
+
+    <div class="generator-right">
+
+
+      <div class="document-card">
+
+        <h3>
+
+          📄 Generated Draft
+
+        </h3>
+
+        <div
+          class="document-preview"
+          id="documentOutput"
+        >
+
+          AI-generated legal
+          document will appear here.
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SCRIPT ================= -->
+
+  <script>
+
+  function generateDocument(){
+
+    document
+    .getElementById("documentOutput")
+    .innerHTML = `
+
+      <strong>
+      FIR Complaint Draft
+      </strong>
+
+      <br><br>
+
+      To,
+      The Station House Officer
+
+      <br><br>
+
+      Subject:
+      Complaint regarding cyber fraud.
+
+      <br><br>
+
+      Respected Sir/Madam,
+
+      <br><br>
+
+      I wish to report an incident
+      involving unauthorized online
+      transactions and suspected
+      cyber fraud activity.
+
+      <br><br>
+
+      Kindly register my complaint
+      and initiate necessary action.
+
+      <br><br>
+
+      Thank You.
+
+    `;
+
+  }
+
+
+  /* ================= UNIVERSE ================= */
+
+  const canvas =
+  document.getElementById("universe");
+
+  const ctx =
+  canvas.getContext("2d");
+
+  let stars=[];
+
+  let w,h;
+
+  function resize(){
+
+    w =
+    canvas.width =
+    window.innerWidth;
+
+    h =
+    canvas.height =
+    window.innerHeight;
+
+  }
+
+  resize();
+
+  window.addEventListener(
+    "resize",
+    resize
+  );
+
+
+  for(let i=0;i<500;i++){
+
+    stars.push({
+
+      x:Math.random()*w,
+
+      y:Math.random()*h,
+
+      z:Math.random()*1.2+.2,
+
+      r:Math.random()*1.5+.3
+
+    });
+
+  }
+
+
+  function animate(){
+
+    ctx.clearRect(0,0,w,h);
+
+    stars.forEach(s=>{
+
+      s.y += s.z;
+
+      if(s.y > h){
+
+        s.y = 0;
+
+        s.x = Math.random()*w;
+
+      }
+
+      ctx.beginPath();
+
+      ctx.arc(
+        s.x,
+        s.y,
+        s.r,
+        0,
+        Math.PI*2
+      );
+
+      ctx.fillStyle =
+      "rgba(127,124,255,.9)";
+
+      ctx.shadowBlur = 15;
+
+      ctx.shadowColor =
+      "#7f7cff";
+
+      ctx.fill();
+
+    });
+
+    requestAnimationFrame(
+      animate
+    );
+
+  }
+
+  animate();
+
+  </script>
+
+</body>
+</html>

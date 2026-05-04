@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    JusticeAI • About Project
+  </title>
+
+
+  <!-- FONT -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+  /* =========================
+     BASE
+  ========================== */
+
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+  body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+
+  }
+
+
+  /* =========================
+     UNIVERSE
+  ========================== */
+
+  #universe{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+    background:
+    radial-gradient(
+      circle at center,
+      #090b1d,
+      #02030a
+    );
+
+  }
+
+
+  /* =========================
+     NAVBAR
+  ========================== */
+
+  .navbar{
+
+    width:100%;
+
+    padding:20px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:
+    rgba(8,10,22,.75);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.06);
+
+  }
+
+  .nav-logo{
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .nav-links{
+
+    display:flex;
+
+    gap:28px;
+
+  }
+
+  .nav-links a{
+
+    color:#d7dbff;
+
+    text-decoration:none;
+
+  }
+
+
+  /* =========================
+     HERO
+  ========================== */
+
+  .hero{
+
+    text-align:center;
+
+    padding:
+    100px 20px 70px;
+
+  }
+
+  .hero-pill{
+
+    display:inline-block;
+
+    padding:
+    10px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(127,124,255,.16);
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    color:#d7dbff;
+
+    font-size:13px;
+
+  }
+
+  .hero h1{
+
+    font-size:72px;
+
+    margin:
+    24px 0 18px;
+
+    line-height:1;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .hero p{
+
+    max-width:780px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:#cfd3ff;
+
+    font-size:17px;
+
+  }
+
+
+  /* =========================
+     SECTION
+  ========================== */
+
+  .section{
+
+    padding:
+    20px 60px 70px;
+
+  }
+
+  .section-title{
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+
+  /* =========================
+     GRID
+  ========================== */
+
+  .grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+
+  }
+
+
+  /* =========================
+     CARD
+  ========================== */
+
+  .card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:34px;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(13,16,32,.92),
+      rgba(20,24,58,.92)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
+
+  }
+
+  .card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-1px;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+      120deg,
+      rgba(127,124,255,.16),
+      rgba(255,111,216,.08)
+    );
+
+    z-index:-1;
+
+  }
+
+  .card-icon{
+
+    width:76px;
+
+    height:76px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:36px;
+
+    margin-bottom:22px;
+
+    background:
+    rgba(127,124,255,.12);
+
+  }
+
+  .card h2{
+
+    margin-bottom:18px;
+
+    font-size:28px;
+
+  }
+
+  .card p{
+
+    line-height:1.9;
+
+    color:#d2d7ff;
+
+  }
+
+
+  /* =========================
+     TECH STACK
+  ========================== */
+
+  .stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:16px;
+
+    margin-top:20px;
+
+  }
+
+  .stack span{
+
+    padding:
+    12px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    color:#d7dbff;
+
+  }
+
+
+  /* =========================
+     TEAM
+  ========================== */
+
+  .team-card{
+
+    text-align:center;
+
+  }
+
+  .team-avatar{
+
+    width:110px;
+
+    height:110px;
+
+    margin:auto;
+
+    margin-bottom:20px;
+
+    border-radius:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:54px;
+
+    background:
+    rgba(127,124,255,.14);
+
+  }
+
+  .team-card h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+  }
+
+  .team-card p{
+
+    color:#b9c0ef;
+
+  }
+
+
+  /* =========================
+     RESPONSIVE
+  ========================== */
+
+  @media(max-width:700px){
+
+    .navbar{
+
+      padding:18px 24px;
+
+    }
+
+    .hero h1{
+
+      font-size:52px;
+
+    }
+
+    .section{
+
+      padding:
+      20px 24px 50px;
+
+    }
+
+    .section-title{
+
+      font-size:34px;
+
+    }
+
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- =========================
+       UNIVERSE
+  ========================== -->
+
+  <canvas id="universe"></canvas>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <div class="navbar">
+
+    <div class="nav-logo">
+
+      ⚖️ JusticeAI
+
+    </div>
+
+    <div class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="#">
+        About
+      </a>
+
+      <a href="#">
+        Project
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <div class="hero">
+
+    <span class="hero-pill">
+
+      🚀 AI-Powered Legal Awareness Platform
+
+    </span>
+
+    <h1>
+
+      About
+      JusticeAI
+
+    </h1>
+
+    <p>
+
+      JusticeAI is an AI-powered legal awareness
+      and assistance platform designed to help
+      citizens understand laws, cyber safety,
+      legal rights and legal procedures through
+      smart digital solutions.
+
+    </p>
+
+  </div>
+
+
+  <!-- =========================
+       OBJECTIVE
+  ========================== -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+
+      Project Objective
+
+    </h2>
+
+    <div class="grid">
+
+
+      <div class="card">
+
+        <div class="card-icon">
+
+          ⚖️
+
+        </div>
+
+        <h2>
+
+          Legal Awareness
+
+        </h2>
+
+        <p>
+
+          Provide easy-to-understand legal
+          education and citizen rights
+          awareness using AI technology.
+
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+
+          🤖
+
+        </div>
+
+        <h2>
+
+          AI Assistance
+
+        </h2>
+
+        <p>
+
+          Offer AI-powered legal guidance
+          for cybercrime, FIR drafting,
+          legal rights and awareness.
+
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+
+          🛡️
+
+        </div>
+
+        <h2>
+
+          Cyber Safety
+
+        </h2>
+
+        <p>
+
+          Educate users about cyber fraud,
+          OTP scams, phishing attacks and
+          online financial security.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TECH STACK
+  ========================== -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+
+      Technology Stack
+
+    </h2>
+
+    <div class="card">
+
+      <p>
+
+        JusticeAI is developed using
+        modern frontend technologies
+        and AI-integrated concepts
+        for responsive user experience.
+
+      </p>
+
+      <div class="stack">
+
+        <span>HTML5</span>
+
+        <span>CSS3</span>
+
+        <span>JavaScript</span>
+
+        <span>Responsive UI</span>
+
+        <span>AI Integration</span>
+
+        <span>Dialogflow</span>
+
+        <span>Cyber Awareness</span>
+
+        <span>Legal Assistance</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FEATURES
+  ========================== -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+
+      Core Features
+
+    </h2>
+
+    <div class="grid">
+
+
+      <div class="card">
+
+        <div class="card-icon">
+
+          🤖
+
+        </div>
+
+        <h2>
+
+          AI Chat Assistant
+
+        </h2>
+
+        <p>
+
+          Smart AI chatbot for legal
+          awareness and citizen guidance.
+
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+
+          📄
+
+        </div>
+
+        <h2>
+
+          FIR Generator
+
+        </h2>
+
+        <p>
+
+          Generate legal FIR drafts
+          instantly using AI assistance.
+
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+
+          📚
+
+        </div>
+
+        <h2>
+
+          Legal Courses
+
+        </h2>
+
+        <p>
+
+          Interactive learning modules
+          for legal and cyber education.
+
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+
+          🏆
+
+        </div>
+
+        <h2>
+
+          Certification System
+
+        </h2>
+
+        <p>
+
+          Generate certificates after
+          course and quiz completion.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       DEVELOPER
+  ========================== -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+
+      Project Developer
+
+    </h2>
+
+    <div class="card team-card">
+
+      <div class="team-avatar">
+
+        👨‍💻
+
+      </div>
+
+      <h3>
+
+        JusticeAI Development Team
+
+      </h3>
+
+      <p>
+
+        Developed as a major academic project
+        focusing on AI-powered legal awareness,
+        cyber safety and citizen support systems.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       UNIVERSE
+    ========================== */
+
+    const canvas =
+    document.getElementById("universe");
+
+    const ctx =
+    canvas.getContext("2d");
+
+    let stars=[];
+
+    let w,h;
+
+    function resize(){
+
+      w =
+      canvas.width =
+      window.innerWidth;
+
+      h =
+      canvas.height =
+      window.innerHeight;
+
+    }
+
+    resize();
+
+    window.addEventListener(
+      "resize",
+      resize
+    );
+
+
+    for(let i=0;i<450;i++){
+
+      stars.push({
+
+        x:Math.random()*w,
+
+        y:Math.random()*h,
+
+        z:Math.random()*1.2+.2,
+
+        r:Math.random()*1.5+.3
+
+      });
+
+    }
+
+
+    function animate(){
+
+      ctx.clearRect(0,0,w,h);
+
+      stars.forEach(s=>{
+
+        s.y += s.z;
+
+        if(s.y > h){
+
+          s.y = 0;
+
+          s.x = Math.random()*w;
+
+        }
+
+        ctx.beginPath();
+
+        ctx.arc(
+          s.x,
+          s.y,
+          s.r,
+          0,
+          Math.PI*2
+        );
+
+        ctx.fillStyle =
+        "rgba(127,124,255,.9)";
+
+        ctx.shadowBlur = 15;
+
+        ctx.shadowColor =
+        "#7f7cff";
+
+        ctx.fill();
+
+      });
+
+      requestAnimationFrame(
+        animate
+      );
+
+    }
+
+    animate();
+
+  </script>
+
+</body>
+</html>

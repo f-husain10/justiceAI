@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    JusticeAI • Privacy Policy
+  </title>
+
+
+  <!-- FONT -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+  /* =========================
+     BASE
+  ========================== */
+
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+  body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+
+  }
+
+
+  /* =========================
+     UNIVERSE
+  ========================== */
+
+  #universe{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+    background:
+    radial-gradient(
+      circle at center,
+      #090b1d,
+      #02030a
+    );
+
+  }
+
+
+  /* =========================
+     NAVBAR
+  ========================== */
+
+  .navbar{
+
+    width:100%;
+
+    padding:20px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:
+    rgba(8,10,22,.75);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.06);
+
+  }
+
+  .nav-logo{
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .nav-links{
+
+    display:flex;
+
+    gap:28px;
+
+  }
+
+  .nav-links a{
+
+    color:#d7dbff;
+
+    text-decoration:none;
+
+  }
+
+
+  /* =========================
+     HERO
+  ========================== */
+
+  .hero{
+
+    text-align:center;
+
+    padding:
+    100px 20px 60px;
+
+  }
+
+  .hero-pill{
+
+    display:inline-block;
+
+    padding:
+    10px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(127,124,255,.16);
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    color:#d7dbff;
+
+    font-size:13px;
+
+  }
+
+  .hero h1{
+
+    font-size:72px;
+
+    margin:
+    24px 0 18px;
+
+    line-height:1;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .hero p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:#cfd3ff;
+
+    font-size:17px;
+
+  }
+
+
+  /* =========================
+     CONTENT
+  ========================== */
+
+  .content{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:
+    20px 60px 80px;
+
+  }
+
+
+  /* =========================
+     SECTION
+  ========================== */
+
+  .policy-card{
+
+    margin-bottom:30px;
+
+    padding:34px;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(13,16,32,.92),
+      rgba(20,24,58,.92)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
+
+  }
+
+  .policy-card h2{
+
+    font-size:30px;
+
+    margin-bottom:18px;
+
+    color:white;
+
+  }
+
+  .policy-card p{
+
+    line-height:1.9;
+
+    color:#d2d7ff;
+
+    margin-bottom:16px;
+
+  }
+
+  .policy-card ul{
+
+    padding-left:24px;
+
+  }
+
+  .policy-card li{
+
+    margin-bottom:14px;
+
+    line-height:1.8;
+
+    color:#d2d7ff;
+
+  }
+
+
+  /* =========================
+     NOTICE
+  ========================== */
+
+  .notice{
+
+    padding:30px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(127,124,255,.18),
+      rgba(255,111,216,.12)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+  }
+
+  .notice h2{
+
+    margin-bottom:16px;
+
+  }
+
+  .notice p{
+
+    color:#d7dbff;
+
+    line-height:1.9;
+
+  }
+
+
+  /* =========================
+     RESPONSIVE
+  ========================== */
+
+  @media(max-width:700px){
+
+    .navbar{
+
+      padding:18px 24px;
+
+    }
+
+    .hero h1{
+
+      font-size:52px;
+
+    }
+
+    .content{
+
+      padding:
+      20px 24px 50px;
+
+    }
+
+    .policy-card{
+
+      padding:28px;
+
+    }
+
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- =========================
+       UNIVERSE
+  ========================== -->
+
+  <canvas id="universe"></canvas>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <div class="navbar">
+
+    <div class="nav-logo">
+
+      ⚖️ JusticeAI
+
+    </div>
+
+    <div class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="#">
+        Privacy Policy
+      </a>
+
+      <a href="#">
+        Security
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <div class="hero">
+
+    <span class="hero-pill">
+
+      🔒 User Privacy & Data Protection
+
+    </span>
+
+    <h1>
+
+      Privacy
+      Policy
+
+    </h1>
+
+    <p>
+
+      JusticeAI values user privacy,
+      cyber safety and responsible
+      AI-assisted legal awareness.
+
+    </p>
+
+  </div>
+
+
+  <!-- =========================
+       CONTENT
+  ========================== -->
+
+  <div class="content">
+
+
+    <!-- SECTION -->
+
+    <div class="policy-card">
+
+      <h2>
+
+        Information Collection
+
+      </h2>
+
+      <p>
+
+        JusticeAI may collect limited
+        user information required for
+        improving legal awareness services
+        and platform functionality.
+
+      </p>
+
+      <ul>
+
+        <li>
+          User contact details
+        </li>
+
+        <li>
+          AI query interactions
+        </li>
+
+        <li>
+          Course participation data
+        </li>
+
+        <li>
+          Cybercrime reporting information
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- SECTION -->
+
+    <div class="policy-card">
+
+      <h2>
+
+        Data Protection
+
+      </h2>
+
+      <p>
+
+        User data is protected through
+        secure digital practices and
+        cybersecurity-focused measures.
+
+      </p>
+
+      <ul>
+
+        <li>
+          Encrypted communication systems
+        </li>
+
+        <li>
+          Restricted access controls
+        </li>
+
+        <li>
+          Responsible data handling
+        </li>
+
+        <li>
+          Secure cloud infrastructure
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- SECTION -->
+
+    <div class="policy-card">
+
+      <h2>
+
+        AI Assistance Disclaimer
+
+      </h2>
+
+      <p>
+
+        JusticeAI provides AI-assisted
+        legal awareness and educational
+        guidance only.
+
+      </p>
+
+      <p>
+
+        The platform does not replace
+        professional legal consultation,
+        courtroom representation or
+        certified legal advice.
+
+      </p>
+
+    </div>
+
+
+    <!-- SECTION -->
+
+    <div class="policy-card">
+
+      <h2>
+
+        User Responsibilities
+
+      </h2>
+
+      <p>
+
+        Users are expected to provide
+        accurate information and use
+        JusticeAI responsibly.
+
+      </p>
+
+      <ul>
+
+        <li>
+          Avoid misuse of legal tools
+        </li>
+
+        <li>
+          Prevent false complaint submissions
+        </li>
+
+        <li>
+          Respect cyber safety guidelines
+        </li>
+
+        <li>
+          Maintain ethical platform usage
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- SECTION -->
+
+    <div class="policy-card">
+
+      <h2>
+
+        Future Security Enhancements
+
+      </h2>
+
+      <p>
+
+        JusticeAI plans to implement
+        advanced authentication,
+        AI moderation systems and
+        stronger cybersecurity layers
+        in future versions.
+
+      </p>
+
+    </div>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+      <h2>
+
+        ⚖️ JusticeAI Commitment
+
+      </h2>
+
+      <p>
+
+        JusticeAI is committed to
+        promoting legal awareness,
+        ethical AI usage and cyber-safe
+        digital environments for citizens.
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       UNIVERSE
+    ========================== */
+
+    const canvas =
+    document.getElementById("universe");
+
+    const ctx =
+    canvas.getContext("2d");
+
+    let stars=[];
+
+    let w,h;
+
+    function resize(){
+
+      w =
+      canvas.width =
+      window.innerWidth;
+
+      h =
+      canvas.height =
+      window.innerHeight;
+
+    }
+
+    resize();
+
+    window.addEventListener(
+      "resize",
+      resize
+    );
+
+
+    for(let i=0;i<450;i++){
+
+      stars.push({
+
+        x:Math.random()*w,
+
+        y:Math.random()*h,
+
+        z:Math.random()*1.2+.2,
+
+        r:Math.random()*1.5+.3
+
+      });
+
+    }
+
+
+    function animate(){
+
+      ctx.clearRect(0,0,w,h);
+
+      stars.forEach(s=>{
+
+        s.y += s.z;
+
+        if(s.y > h){
+
+          s.y = 0;
+
+          s.x = Math.random()*w;
+
+        }
+
+        ctx.beginPath();
+
+        ctx.arc(
+          s.x,
+          s.y,
+          s.r,
+          0,
+          Math.PI*2
+        );
+
+        ctx.fillStyle =
+        "rgba(127,124,255,.9)";
+
+        ctx.shadowBlur = 15;
+
+        ctx.shadowColor =
+        "#7f7cff";
+
+        ctx.fill();
+
+      });
+
+      requestAnimationFrame(
+        animate
+      );
+
+    }
+
+    animate();
+
+  </script>
+
+</body>
+</html>

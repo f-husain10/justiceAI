@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    JusticeAI • Future Scope
+  </title>
+
+
+  <!-- FONT -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+  /* =========================
+     BASE
+  ========================== */
+
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+  body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+
+  }
+
+
+  /* =========================
+     UNIVERSE
+  ========================== */
+
+  #universe{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+    background:
+    radial-gradient(
+      circle at center,
+      #090b1d,
+      #02030a
+    );
+
+  }
+
+
+  /* =========================
+     NAVBAR
+  ========================== */
+
+  .navbar{
+
+    width:100%;
+
+    padding:20px 60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:
+    rgba(8,10,22,.75);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.06);
+
+  }
+
+  .nav-logo{
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .nav-links{
+
+    display:flex;
+
+    gap:28px;
+
+  }
+
+  .nav-links a{
+
+    color:#d7dbff;
+
+    text-decoration:none;
+
+  }
+
+
+  /* =========================
+     HERO
+  ========================== */
+
+  .hero{
+
+    text-align:center;
+
+    padding:
+    100px 20px 70px;
+
+  }
+
+  .hero-pill{
+
+    display:inline-block;
+
+    padding:
+    10px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(127,124,255,.16);
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    color:#d7dbff;
+
+    font-size:13px;
+
+  }
+
+  .hero h1{
+
+    font-size:72px;
+
+    margin:
+    24px 0 18px;
+
+    line-height:1;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .hero p{
+
+    max-width:780px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:#cfd3ff;
+
+    font-size:17px;
+
+  }
+
+
+  /* =========================
+     SECTION
+  ========================== */
+
+  .scope-section{
+
+    padding:
+    20px 60px 80px;
+
+  }
+
+
+  /* =========================
+     GRID
+  ========================== */
+
+  .scope-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+  }
+
+
+  /* =========================
+     CARD
+  ========================== */
+
+  .scope-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:36px;
+
+    border-radius:34px;
+
+    background:
+    linear-gradient(
+      135deg,
+      rgba(13,16,32,.92),
+      rgba(20,24,58,.92)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.25);
+
+    transition:.35s;
+
+  }
+
+  .scope-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 20px 45px rgba(127,124,255,.18);
+
+  }
+
+  .scope-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-1px;
+
+    border-radius:34px;
+
+    background:
+    linear-gradient(
+      120deg,
+      rgba(127,124,255,.16),
+      rgba(255,111,216,.08)
+    );
+
+    z-index:-1;
+
+  }
+
+
+  /* =========================
+     ICON
+  ========================== */
+
+  .scope-icon{
+
+    width:82px;
+
+    height:82px;
+
+    border-radius:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:38px;
+
+    margin-bottom:24px;
+
+    background:
+    rgba(127,124,255,.12);
+
+  }
+
+
+  /* =========================
+     CONTENT
+  ========================== */
+
+  .scope-card h2{
+
+    font-size:30px;
+
+    margin-bottom:18px;
+
+  }
+
+  .scope-card p{
+
+    line-height:1.9;
+
+    color:#d2d7ff;
+
+  }
+
+
+  /* =========================
+     TIMELINE
+  ========================== */
+
+  .timeline{
+
+    margin-top:70px;
+
+  }
+
+  .timeline-title{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:50px;
+
+    background:
+    linear-gradient(
+      90deg,
+      #7f7cff,
+      #ff6fd8
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+  }
+
+  .timeline-box{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:26px;
+
+  }
+
+  .timeline-item{
+
+    padding:28px;
+
+    border-radius:28px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+  }
+
+  .timeline-item h3{
+
+    margin-bottom:14px;
+
+    color:#ffb3c7;
+
+  }
+
+  .timeline-item p{
+
+    line-height:1.8;
+
+    color:#cfd3ff;
+
+  }
+
+
+  /* =========================
+     RESPONSIVE
+  ========================== */
+
+  @media(max-width:700px){
+
+    .navbar{
+
+      padding:18px 24px;
+
+    }
+
+    .hero h1{
+
+      font-size:52px;
+
+    }
+
+    .scope-section{
+
+      padding:
+      20px 24px 50px;
+
+    }
+
+    .timeline-title{
+
+      font-size:34px;
+
+    }
+
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- =========================
+       UNIVERSE
+  ========================== -->
+
+  <canvas id="universe"></canvas>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <div class="navbar">
+
+    <div class="nav-logo">
+
+      ⚖️ JusticeAI
+
+    </div>
+
+    <div class="nav-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="#">
+        Future Scope
+      </a>
+
+      <a href="#">
+        Innovation
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <div class="hero">
+
+    <span class="hero-pill">
+
+      🚀 Future Expansion & Innovation
+
+    </span>
+
+    <h1>
+
+      Future Scope
+      of JusticeAI
+
+    </h1>
+
+    <p>
+
+      JusticeAI can evolve into a large-scale
+      AI-powered legal ecosystem offering
+      smart legal services, citizen protection,
+      AI consultation and government integration.
+
+    </p>
+
+  </div>
+
+
+  <!-- =========================
+       SCOPE
+  ========================== -->
+
+  <section class="scope-section">
+
+    <div class="scope-grid">
+
+
+      <!-- CARD -->
+
+      <div class="scope-card">
+
+        <div class="scope-icon">
+
+          🤖
+
+        </div>
+
+        <h2>
+
+          Advanced AI Legal Assistant
+
+        </h2>
+
+        <p>
+
+          Future versions can integrate
+          NLP and Generative AI models
+          for smarter legal understanding,
+          document analysis and case prediction.
+
+        </p>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="scope-card">
+
+        <div class="scope-icon">
+
+          📱
+
+        </div>
+
+        <h2>
+
+          Mobile Application
+
+        </h2>
+
+        <p>
+
+          JusticeAI can be expanded into
+          Android and iOS applications
+          for easier public accessibility
+          and real-time legal support.
+
+        </p>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="scope-card">
+
+        <div class="scope-icon">
+
+          🌐
+
+        </div>
+
+        <h2>
+
+          Government Integration
+
+        </h2>
+
+        <p>
+
+          Integration with cybercrime
+          portals, police systems and
+          legal departments can enable
+          direct complaint processing.
+
+        </p>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="scope-card">
+
+        <div class="scope-icon">
+
+          👨‍⚖️
+
+        </div>
+
+        <h2>
+
+          Lawyer Marketplace
+
+        </h2>
+
+        <p>
+
+          A verified lawyer consultation
+          marketplace can be created
+          for secure legal appointments
+          and virtual legal hearings.
+
+        </p>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="scope-card">
+
+        <div class="scope-icon">
+
+          🛡️
+
+        </div>
+
+        <h2>
+
+          AI Cyber Protection
+
+        </h2>
+
+        <p>
+
+          AI-powered fraud detection
+          systems can identify phishing,
+          scam messages and suspicious
+          cyber activities in real time.
+
+        </p>
+
+      </div>
+
+
+      <!-- CARD -->
+
+      <div class="scope-card">
+
+        <div class="scope-icon">
+
+          🌍
+
+        </div>
+
+        <h2>
+
+          Multilingual Accessibility
+
+        </h2>
+
+        <p>
+
+          JusticeAI can support multiple
+          Indian languages to improve
+          accessibility for rural and
+          non-English-speaking citizens.
+
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- TIMELINE -->
+
+    <div class="timeline">
+
+
+      <h2 class="timeline-title">
+
+        Future Development Roadmap
+
+      </h2>
+
+
+      <div class="timeline-box">
+
+
+        <div class="timeline-item">
+
+          <h3>
+
+            Phase 1
+
+          </h3>
+
+          <p>
+
+            AI chatbot enhancement,
+            improved legal awareness
+            modules and certification system.
+
+          </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <h3>
+
+            Phase 2
+
+          </h3>
+
+          <p>
+
+            Mobile app launch with
+            real-time cybercrime reporting
+            and legal consultation.
+
+          </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <h3>
+
+            Phase 3
+
+          </h3>
+
+          <p>
+
+            Government and legal
+            institution integration for
+            direct citizen support systems.
+
+          </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <h3>
+
+            Phase 4
+
+          </h3>
+
+          <p>
+
+            AI-powered predictive legal
+            analytics and multilingual
+            legal accessibility platform.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       UNIVERSE
+    ========================== */
+
+    const canvas =
+    document.getElementById("universe");
+
+    const ctx =
+    canvas.getContext("2d");
+
+    let stars=[];
+
+    let w,h;
+
+    function resize(){
+
+      w =
+      canvas.width =
+      window.innerWidth;
+
+      h =
+      canvas.height =
+      window.innerHeight;
+
+    }
+
+    resize();
+
+    window.addEventListener(
+      "resize",
+      resize
+    );
+
+
+    for(let i=0;i<450;i++){
+
+      stars.push({
+
+        x:Math.random()*w,
+
+        y:Math.random()*h,
+
+        z:Math.random()*1.2+.2,
+
+        r:Math.random()*1.5+.3
+
+      });
+
+    }
+
+
+    function animate(){
+
+      ctx.clearRect(0,0,w,h);
+
+      stars.forEach(s=>{
+
+        s.y += s.z;
+
+        if(s.y > h){
+
+          s.y = 0;
+
+          s.x = Math.random()*w;
+
+        }
+
+        ctx.beginPath();
+
+        ctx.arc(
+          s.x,
+          s.y,
+          s.r,
+          0,
+          Math.PI*2
+        );
+
+        ctx.fillStyle =
+        "rgba(127,124,255,.9)";
+
+        ctx.shadowBlur = 15;
+
+        ctx.shadowColor =
+        "#7f7cff";
+
+        ctx.fill();
+
+      });
+
+      requestAnimationFrame(
+        animate
+      );
+
+    }
+
+    animate();
+
+  </script>
+
+</body>
+</html>
